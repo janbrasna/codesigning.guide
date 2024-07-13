@@ -12,10 +12,8 @@
   (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
   m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
   })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-
   ga('create', 'UA-20906421-13', 'auto');
   ga('send', 'pageview');
-
 </script>  
 </head>
 <body>
@@ -121,10 +119,8 @@
     <h5>
       Is this secure?
     </h5>
-    <p>
-      <a id="learn-more" href="#">Expand for more </a>
-    </p>
-    <div class="secure-collapse">
+    <details>
+      <summary>Expand for more</summary>
       <p>
         Both your keys and provisioning profiles are encrypted using OpenSSL using a passphrase.
       </p>
@@ -185,7 +181,7 @@
           </p>
         </li>
       </ul>
-    </div>
+    </details>
   </div>
   <hr>
   <div id="match" class="bg-container">
@@ -283,8 +279,4 @@
       </div>
     </div>
   </div>
-  <script src="assets/js/vendor/jquery/jquery.min.js"></script>
-  <script src="assets/js/main.min.js"></script>
-  <script src="assets/js/vendor/bootstrap/bootstrap.min.js"></script>
-  <script src="//localhost:8080/livereload.js" charset="utf-8"></script>
 </body>
