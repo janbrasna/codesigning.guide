@@ -70,7 +70,7 @@
       How to use Git for code signing:
     </h5>
     <p>
-      The basic requirement is to have <u>one code signing identity</u> shared across your team. The easiest way to do that is to create a new Apple ID for the team (e.g. ios-dev@company.com) and use that from now on. To get started:
+      The basic requirement is to have <strong>one code signing identity</strong> shared across your team. The easiest way to do that is to create a new Apple ID for the team (e.g. ios-dev@company.com) and use that from now on. To get started:
     </p>
     <p>
       1. First, create a new, private Git repo in which you can store the profiles.
@@ -194,7 +194,7 @@
         Making things simple with <i>match</i>
       </h2>
       <h4 class="text-center">
-        To make it easy for you to implement this new approach to code signing, <a href="https://fastlane.tools/" target="_blank">fastlane</a> now provides a new tool called <a href="https://github.com/fastlane/fastlane/tree/master/match#readme" target="_blank">match</a>.
+        To make it easy for you to implement this new approach to code signing, <a href="https://fastlane.tools/" target="_blank">fastlane</a> now provides a new tool called <a href="https://fastlane.tools/match" target="_blank">match</a>.
       </h4>
       <h4 class="text-center">
         <strong><a href="https://fastlane.tools/" target="_blank">match</a></strong> takes care of all the heavy lifting for you, including:
@@ -223,27 +223,27 @@
         To get started, create a new private Git repo and run:
       </p>
       <div class="coding">
-        match init
+        fastlane match init
       </div>
       <img src="assets/img/cs-match-init.gif" alt="match init" class="gif-anim img-responsive" />
       <p>
         To generate and store new certificates and provisioning profiles run:
       </p>
       <div class="coding">
-        match appstore
+        fastlane match appstore
       </div>
       <p> 
         Or: 
       </p>
       <div class="coding">
-        match development
+        fastlane match development
       </div>
       <img src="assets/img/cs-match-appstore-big.gif" alt="match appstore" class="gif-anim img-responsive" />
       <p>
-        On a new machine, just run <span class="inline-coding">match appstore</span> to install the existing certificates.
+        On a new machine, just run <span class="inline-coding">fastlane match appstore</span> to install the existing certificates.
       </p>
       <p>
-        If you never really cared about code signing and have a messy Apple Developer account with a lot of invalid, expired or Xcode managed profiles/certificates, you can use the <span class="inline-coding">match nuke</span> command to completely clear your developer portal.
+        If you never really cared about code signing and have a messy Apple Developer account with a lot of invalid, expired or Xcode managed profiles/certificates, you can use the <span class="inline-coding">fastlane match nuke</span> command to completely clear your developer portal.
       </p>
       <p>
         This command will revoke all certificates and provisioning profiles for a specific environment.
@@ -252,13 +252,13 @@
         Simply run:
       </p>
       <div class="coding">
-        match nuke development
-        <br>match nuke distribution
+        fastlane match nuke development
+        <br>fastlane match nuke distribution
       </div>
       <img src="assets/img/cs-match-nuke.gif" alt="" class="gif-anim img-responsive" />
       <div class="bottom-img text-center">
         <img src="assets/img/cs-open-source.png" alt="100% Cpen Source" />
-        <a href="https://github.com/fastlane/fastlane/tree/master/match#readme" target="_blank">
+        <a href="https://fastlane.tools/match" target="_blank">
           <img src="assets/img/get-match-on-fastlane.png" alt="get match on fastlane" class="get-match" style="width:320px; height:140px;" />
         </a>
       </div>
