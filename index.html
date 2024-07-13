@@ -2,38 +2,35 @@
 <html>
 <head>
   <title>Code Signing Guide for Teams</title>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <link rel="stylesheet" href="assets/css/vendor/bootstrap/bootstrap.min.css" />
-  <link rel="stylesheet" href="assets/css/extra_simil_bootstrap.css" />
-  <link rel="stylesheet" href="assets/css/style.min.css" />
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="assets/css/vendor/bootstrap/bootstrap.min.css">
+  <link rel="stylesheet" href="assets/css/style.css">
 <script>
   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
   (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
   m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
   })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-
   ga('create', 'UA-20906421-13', 'auto');
   ga('send', 'pageview');
-
 </script>  
 </head>
 <body>
   <div class="container new-approach text-center">
-    <h2>
+    <h1>
       A new approach to code signing
-    </h2>
-    <h4>
+    </h1>
+    <h3>
       A best practices guide on how to manage certificates
       and provisioning profiles in your development team.
-    </h4>
+    </h3>
     <p>
       Wait, what is code signing? Code signing is required on iOS when distributing your app to customers. It assures that your app can be trusted and hasn’t been modified since it was last signed.
     </p>
     <p>
       See <a href="https://developer.apple.com/support/code-signing/" target="_blank">Apple’s docs</a> for more general details on code signing.
     </p>
-    <img src="assets/img/cs-down-arrow.png" class="down-arrow" />
+    <img src="assets/img/cs-down-arrow.png" class="down-arrow">
   </div>
   <hr>
   <div class="container the-problem">
@@ -45,7 +42,7 @@
       When deploying an app to the App Store, a beta testing service or even installing it on a single device, most development teams have separate code signing identities for every member. This results in dozens of profiles including a lot of duplicates.
     </p>
     <div class="img_container text-center">
-      <img src="assets/img/cs-the-problem.png" class="img-responsive" alt="Update provisioning profiles across machines" />
+      <img src="assets/img/cs-the-problem.png" class="img-responsive" alt="Update provisioning profiles across machines">
     </div>
     <p>
       You have to manually renew and download the latest set of provisioning profiles every time you add a new device or a certificate expires. Additionally this requires spending a lot of time when setting up a new machine that will build your app.
@@ -64,7 +61,7 @@
       Instead of registering for <em>yet</em> another service, you can use a separate private Git repo to sync your profiles across multiple machines.
     </p>
     <div class="img_container text-center">
-      <img src="assets/img/cs-git-img.png" class="img-responsive" alt="Your Keys In-Sync with Git" />
+      <img src="assets/img/cs-git-img.png" class="img-responsive" alt="Your Keys In-Sync with Git">
     </div>
     <h5>
       How to use Git for code signing:
@@ -121,10 +118,8 @@
     <h5>
       Is this secure?
     </h5>
-    <p>
-      <a id="learn-more" href="#">Expand for more </a>
-    </p>
-    <div class="secure-collapse">
+    <details>
+      <summary>Expand for more</summary>
       <p>
         Both your keys and provisioning profiles are encrypted using OpenSSL using a passphrase.
       </p>
@@ -185,7 +180,7 @@
           </p>
         </li>
       </ul>
-    </div>
+    </details>
   </div>
   <hr>
   <div id="match" class="bg-container">
@@ -201,19 +196,19 @@
       </h4>
       <div class="row including-tools">
         <div class="col-xs-12 col-md-4 ">
-          <img src="assets/img/cs-icon-identity.jpg" alt="Generates your code signing identity" />
+          <img src="assets/img/cs-icon-identity.jpg" alt="Generates your code signing identity">
           <p class="italic">
             Generates your code signing identity and provisioning profiles if necessary.
           </p>
         </div>
         <div class="col-xs-12 col-md-4">
-          <img src="assets/img/cs-icon-storing.jpg" alt="Stores everything in a separate Git repository" />
+          <img src="assets/img/cs-icon-storing.jpg" alt="Stores everything in a separate Git repository">
           <p class="italic">
             Stores all certificates and provisioning profiles in a separate Git repository.
           </p>
         </div>
         <div class="col-xs-12 col-md-4">
-          <img src="assets/img/cs-icon-installation.jpg" alt="Automatically installs the certificates" />
+          <img src="assets/img/cs-icon-installation.jpg" alt="Automatically installs the certificates">
           <p class="italic">
             Automatically installs the certificates and provisioning profiles from the repository.
           </p>
@@ -225,7 +220,7 @@
       <div class="coding">
         fastlane match init
       </div>
-      <img src="assets/img/cs-match-init.gif" alt="match init" class="gif-anim img-responsive" />
+      <img src="assets/img/cs-match-init.gif" alt="match init" class="gif-anim img-responsive">
       <p>
         To generate and store new certificates and provisioning profiles run:
       </p>
@@ -238,7 +233,7 @@
       <div class="coding">
         fastlane match development
       </div>
-      <img src="assets/img/cs-match-appstore-big.gif" alt="match appstore" class="gif-anim img-responsive" />
+      <img src="assets/img/cs-match-appstore-big.gif" alt="match appstore" class="gif-anim img-responsive">
       <p>
         On a new machine, just run <span class="inline-coding">fastlane match appstore</span> to install the existing certificates.
       </p>
@@ -255,24 +250,24 @@
         fastlane match nuke development
         <br>fastlane match nuke distribution
       </div>
-      <img src="assets/img/cs-match-nuke.gif" alt="" class="gif-anim img-responsive" />
+      <img src="assets/img/cs-match-nuke.gif" alt="match nuke" class="gif-anim img-responsive">
       <div class="bottom-img text-center">
-        <img src="assets/img/cs-open-source.png" alt="100% Cpen Source" />
+        <img src="assets/img/cs-open-source.png" alt="100% Open Source">
         <a href="https://fastlane.tools/match" target="_blank">
-          <img src="assets/img/get-match-on-fastlane.png" alt="get match on fastlane" class="get-match" style="width:320px; height:140px;" />
+          <img src="assets/img/get-match-on-fastlane.png" alt="get match on fastlane" class="get-match" width="320" height="140">
         </a>
       </div>
     </div>
   </div>
   <hr>
   <div class="container learn-more text-center">
-    <h2 class="text-center" style="font-size:45px!important;">
+    <h2 class="text-center">
       Reduce the time it takes to build &amp; deploy your app
     </h2>
-    <h4 style="font-size:26px!important;">
+    <h4>
       Learn more about how fastlane unifies and automates your app's release process.
     </h4>
-    <a href="https://fastlane.tools/" target="_blank"><img src="assets/img/cs-fastlane-logo.png" alt="Fastlane" style="width:268px; height:71px;"></a>
+    <a href="https://fastlane.tools/" target="_blank"><img src="assets/img/cs-fastlane-logo.png" alt="Fastlane" width="268"></a>
   </div>
   <div class="footer">
     <div class="container">
@@ -283,8 +278,4 @@
       </div>
     </div>
   </div>
-  <script src="assets/js/vendor/jquery/jquery.min.js"></script>
-  <script src="assets/js/main.min.js"></script>
-  <script src="assets/js/vendor/bootstrap/bootstrap.min.js"></script>
-  <script src="//localhost:8080/livereload.js" charset="utf-8"></script>
 </body>
