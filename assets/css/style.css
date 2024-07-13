@@ -91,8 +91,11 @@ img.img-responsive {
 .the-solution .img_container {
   margin-bottom: 50px;
 }
-.the-solution .secure-collapse {
-  display: none;
+.the-solution details summary {
+  cursor: pointer;
+  display: list-item;
+  text-decoration: underline;
+  padding-bottom: 1.5em;
 }
 .the-solution ul {
   padding-left: 0px;
