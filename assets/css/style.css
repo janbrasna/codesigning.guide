@@ -15,7 +15,7 @@
   max-width: 992px;
   margin: 0 auto;
 }
-h2 {
+h1, h2 {
   font-size: 68px;
   letter-spacing: -0.01em;
   line-height: 70px;
@@ -24,12 +24,12 @@ h2 {
   color: #595959;
 }
 @media (max-width: 480px) {
-  h2 {
+  h1, h2 {
     font-size: 55px;
     line-height: 55px;
   }
 }
-h4 {
+h3, h4 {
   font-size: 42px;
   letter-spacing: -0.01em;
   line-height: 48px;
@@ -38,7 +38,7 @@ h4 {
   color: #A6A6A6;
 }
 @media (max-width: 480px) {
-  h4 {
+  h3, h4 {
     font-size: 30px;
     line-height: 30px;
   }
@@ -91,8 +91,11 @@ img.img-responsive {
 .the-solution .img_container {
   margin-bottom: 50px;
 }
-.the-solution .secure-collapse {
-  display: none;
+.the-solution details summary {
+  cursor: pointer;
+  display: list-item;
+  text-decoration: underline;
+  padding-bottom: 1.5em;
 }
 .the-solution ul {
   padding-left: 0px;
@@ -106,13 +109,13 @@ img.img-responsive {
   display: inline;
 }
 .the-solution ul li:before {
-  content: "· ";
+  content: "• ";
   color: #979797;
   font-size: 20px;
 }
 .the-solution ul.smaller li {
   margin-bottom: 0px;
-  font-style: 19px;
+  font-size: 19px;
   color: #979797;
   line-height: 19px;
 }
@@ -220,10 +223,10 @@ img.img-responsive {
   }
 }
 .learn-more h2 {
-  font-size: 50px;
+  font-size: 45px;
 }
 .learn-more h4 {
-  font-size: 34px;
+  font-size: 26px;
   line-height: 34px;
 }
 .learn-more img {
